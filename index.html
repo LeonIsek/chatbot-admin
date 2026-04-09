@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-layer" aria-hidden="true"></div>
+
+  <main class="dashboard">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Admin-Panel</p>
+        <h1>Chatbot Admin Dashboard</h1>
+        <p class="subtitle">Verwaltung von Kunden, Status und Zahlungen</p>
+      </div>
+      <div class="topbar-actions">
+        <button id="exportBtn" class="btn btn-primary export-btn" type="button">Export clients.json</button>
+        <div class="status-pills">
+          <div class="status-pill" id="connectionStatus">Verbindung: wird geprüft...</div>
+          <div class="status-pill" id="dataSourceState">Datenquelle: wird geladen...</div>
+        </div>
+        <p id="saveInfo" class="save-info hidden">Änderung gespeichert</p>
+        <p id="lastChangeStatus" class="last-change">Letzte Änderung: keine</p>
+      </div>
+    </header>
+
+    <section id="errorBanner" class="error-banner hidden" role="alert" aria-live="assertive"></section>
+
+    <section class="stats-grid" aria-label="Kennzahlen">
+      <article class="stat-card">
+        <p class="stat-label">Gesamtzahl Kunden</p>
+        <p class="stat-value" id="statTotal">0</p>
+      </article>
+      <article class="stat-card">
+        <p class="stat-label">Aktive Kunden</p>
+        <p class="stat-value" id="statActive">0</p>
+      </article>
+      <article class="stat-card">
+        <p class="stat-label">Inaktive Kunden</p>
+        <p class="stat-value" id="statInactive">0</p>
+      </article>
+      <article class="stat-card">
+        <p class="stat-label">Offene Zahlungen</p>
+        <p class="stat-value" id="statOpenPayments">0</p>
+      </article>
+    </section>
+
+    <section class="panel controls-panel" aria-label="Suche und Filter">
+      <label class="control-group" for="searchInput">
+        <span>Suche (Kunden-ID oder Firmenname)</span>
+        <input id="searchInput" type="search" placeholder="z. B. kunde123 oder Beispiel AG" />
+      </label>
+
+      <label class="control-group" for="filterSelect">
+        <span>Filter</span>
+        <select id="filterSelect">
+          <option value="all">Alle</option>
+          <option value="active">Aktiv</option>
+          <option value="inactive">Inaktiv</option>
+          <option value="payment-open">Zahlung offen</option>
+          <option value="payment-paid">Zahlung bezahlt</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="panel" aria-label="Kundenliste">
+      <div class="panel-head">
+        <h2>Kundenübersicht</h2>
+        <p id="resultCount">0 Einträge</p>
+      </div>
+
+      <div id="clientsContainer" class="clients-grid"></div>
+
+      <p id="emptyState" class="empty-state hidden">Keine Kunden für die aktuelle Suche oder den ausgewählten Filter gefunden.</p>
+    </section>
+  </main>
+
+  <div id="detailsModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button id="closeModalBtn" class="modal-close" type="button" aria-label="Details schliessen">x</button>
+      <h3 id="modalTitle">Kundendetails</h3>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <template id="clientCardTemplate">
+    <article class="client-card">
+      <div class="client-main">
+        <div>
+          <p class="client-id"></p>
+          <h3 class="client-name"></h3>
+        </div>
+        <div class="client-badges"></div>
+      </div>
+      <div class="client-info"></div>
+      <div class="client-actions"></div>
+    </article>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+[
+  {
+    "id": "kunde123",
+    "businessName": "Alpen Pflege GmbH",
+    "status": "inaktiv",
+    "phone": "+41 44 111 22 33",
+    "email": "kontakt@alpen-pflege.ch",
+    "address": "Bahnhofstrasse 10, 8001 Zuerich",
+    "openingHours": {
+      "Mo-Fr": "08:00-18:00",
+      "Sa": "09:00-13:00"
+    },
+    "pricing": {
+      "plan": "Starter",
+      "monthly": "149 CHF"
+    },
+    "tone": "professionell",
+    "paymentStatus": "bezahlt",
+    "monthlyPrice": 149,
+    "website": "https://kunde123-demo.ch",
+    "note": "Hauptkunde, aktiv im Test"
+  },
+  {
+    "id": "kunde999",
+    "businessName": "Nordstern Studio",
+    "status": "aktiv",
+    "phone": "+41 31 999 88 77",
+    "email": "hello@nordstern-studio.ch",
+    "address": "Marktgasse 2, 3011 Bern",
+    "openingHours": {
+      "Mo-Sa": "09:00-19:00"
+    },
+    "pricing": {
+      "plan": "Growth",
+      "monthly": "229 CHF"
+    },
+    "tone": "freundlich",
+    "paymentStatus": "offen",
+    "monthlyPrice": 149,
+    "website": "https://kunde999-demo.ch",
+    "note": "Inaktiv wegen offener Zahlung"
+  },
+  {
+    "id": "kunde204",
+    "businessName": "Dental Zentrum Rhein",
+    "status": "aktiv",
+    "phone": "+41 61 204 77 00",
+    "email": "team@dental-rhein.ch",
+    "address": "Clarastrasse 25, 4058 Basel",
+    "openingHours": "Mo-Fr 07:30-17:30",
+    "pricing": "Pro 199 CHF/Monat",
+    "tone": "vertrauensvoll",
+    "paymentStatus": "offen"
+  },
+  {
+    "id": "kunde341",
+    "businessName": "Bewegungsatelier Seefeld",
+    "status": "aktiv",
+    "phone": "+41 43 341 55 66",
+    "email": "info@bewegungsatelier-seefeld.ch",
+    "address": "Seefeldstrasse 88, 8008 Zuerich",
+    "openingHours": [
+      "Mo-Do 09:00-20:00",
+      "Fr 09:00-18:00"
+    ],
+    "pricing": {
+      "basic": "129 CHF",
+      "premium": "179 CHF"
+    },
+    "tone": "motivierend",
+    "paymentStatus": "offen"
+  }
+]
