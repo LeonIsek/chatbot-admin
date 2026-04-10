@@ -100,8 +100,22 @@
     </article>
   </template>
 
+  <!-- Login Overlay -->
+  <div id="loginOverlay" class="login-overlay">
+    <div class="login-card">
+      <p class="eyebrow">Admin-Panel</p>
+      <h2>Chatbot Admin</h2>
+      <form id="loginForm">
+        <input id="loginPassword" type="password" placeholder="Passwort" autocomplete="current-password" />
+        <button type="submit" class="btn btn-primary">Einloggen</button>
+        <p id="loginError" class="login-error hidden">Falsches Passwort</p>
+      </form>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase.js"></script>
+  <script src="login.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
